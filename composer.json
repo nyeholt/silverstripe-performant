@@ -1,0 +1,19 @@
+{
+	"name": "nyeholt/silverstripe-performant",
+	"description": "A set of utilities for making SS perform a little better",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "performance"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Marcus Nyeholt",
+			"email": "marcus@silverstripe.com.au"
+		}
+	],
+	"extra": {
+		"installer-name": "performant",
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}
