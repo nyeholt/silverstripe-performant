@@ -226,7 +226,13 @@ class SiteDataService {
 		$kids = isset($node['kids']) ? $node['kids'] : array();
 		$node = $this->createMenuNode($node);
 		$out->push($node);
-		$node->Link = ltrim($parent ? $parent->Link . '/' . $node->URLSegment : $node->URLSegment, '/');
+		$node->Link = ltrim($parent
+            ? ($parent->Link == '' ? 'home' : $parent->Link) . '/' . $node->URLSegment
+            : $node->URLSegment, '/');
+		
+		if ($node->Link == 'home') {
+			$node->Link = '';
+		}
 
 		foreach ($kids as $id) {
 			$n = $nodemap[$id];
