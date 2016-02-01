@@ -227,8 +227,9 @@ class SiteDataService {
 		$node = $this->createMenuNode($node);
 		$out->push($node);
 		$node->Link = ltrim($parent
-            ? ($parent->Link == '' ? 'home' : $parent->Link) . '/' . $node->URLSegment
-            : $node->URLSegment, '/');
+            ? rtrim(($parent->Link == '' ? 'home' : $parent->Link), '/') . '/' . $node->URLSegment
+            : $node->URLSegment, 
+			'/');
 		
 		if ($node->Link == 'home') {
 			$node->Link = '';
