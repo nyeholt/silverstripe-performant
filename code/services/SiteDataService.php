@@ -79,21 +79,6 @@ class SiteDataService {
 		$allids = array(
 		);
 
-		if (class_exists('Multisites')) {
-			$site = Multisites::inst()->getCurrentSite();
-
-			$all[] = array(
-				'ID' => $site->ID,
-				'ClassName' => 'Site',
-				'Title' => $site->Title,
-				'ParentID' => 0,
-				'MenuTitle' => $site->Title,
-				'URLSegment' => '',
-				'CanViewType' => $site->CanViewType,
-			);
-			$allids[$site->ID] = true;
-		}
-
 		$public = $this->getPublicNodes();
 		foreach ($public as $row) {
 			$allids[$row['ID']] = true;
